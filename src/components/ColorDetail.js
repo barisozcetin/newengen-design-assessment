@@ -26,8 +26,16 @@ const ColorDetail = ({ color, similarColors, onColorChange }) => {
           .container {
             display: grid;
             height: 100%;
+            padding-top: 50px;
             grid-template-rows: 50vh 25vh 30px;
             grid-template-columns: 1fr;
+          }
+          @media screen and (min-width: 1500px) {
+            .container {
+              padding-top: 50px;
+              padding-left: 150px;
+              padding-right: 150px;
+            }
           }
           .similar-list {
             padding: 0;

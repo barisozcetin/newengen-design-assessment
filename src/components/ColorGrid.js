@@ -64,24 +64,30 @@ class ColorGrid extends Component {
         <style jsx>{`
           .container {
             // grid-area: content;
-            // margin: 20px;
+            margin: 20px;
             // margin-left: 60px;
             // margin-right: 60px;
-            display: flex;
-            flex-direction: column;
+            display: grid;
+            grid-template-rows: 1fr auto;
+          }
+          .pagination {
+            justify-self: center;
           }
           .swatch--grid {
             display: grid;
-            padding: 10px;
-            padding-left: 1rem;
-            padding-right: 1rem;
-            column-gap: 8px;
-            row-gap: 6px;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: 200px 200px 200px;
+            // padding: 10px;
+            // padding-left: 1rem;
+            // padding-right: 1rem;
+            column-gap: 1.2rem;
+            row-gap: 1.2rem;
+            height: 100%;
+            grid-template-columns: repeat(3, minmax(60px, 220px));
+            grid-template-rows: repeat(4, minmax(100px, 150px));
           }
-          @media screen and (min-width: 768px) {
+          @media screen and (min-width: 769px) {
             .swatch--grid {
+              grid-template-columns: repeat(4, minmax(100px, 250px));
+              grid-template-rows: repeat(3, minmax(100px, 200px));
               padding: 20px;
               padding-left: 1rem;
               padding-right: 1rem;
@@ -91,15 +97,15 @@ class ColorGrid extends Component {
           }
           @media screen and (min-width: 1600px) {
             .swatch--grid {
-              padding: 40px;
-              padding-left: 10rem;
-              padding-right: 10rem;
+              padding: 20px;
+              padding-left: 1rem;
+              padding-right: 1rem;
               column-gap: 80px;
               row-gap: 60px;
             }
             .content {
               grid-area: content;
-              margin: 20px;
+              margin: 10px;
               margin-left: 60px;
               margin-right: 60px;
             }
