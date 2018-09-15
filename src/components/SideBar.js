@@ -1,42 +1,97 @@
 import React from "react";
 import { connect } from "react-redux";
-import { setMainColor } from "../actions/colors";
+import { setMainColor, selectRandomColor } from "../actions/colors";
+import SearchBox from "./SearchBox";
 
 const SideBar = props => {
   return (
-    <nav className="sidebar">
-      <div className="sidebar--random">
-        <button>Random Color</button>
-      </div>
-      <ul className="sidebar--list">
-        {props.mainColors.map(color => {
-          const active = props.selectedMainColor === color;
-          return (
-            <li key={color}>
-              <a
-                role="button"
-                className={`list--item ${active ? "active" : ""}`}
-                onClick={() => props.dispatch(setMainColor(color))}
-              >
-                {color}
-              </a>
-              {active && (
-                <a role="button" onClick={() => props.dispatch(setMainColor())}>
-                  X
+    <nav className="sidebar" aria-expanded={props.active}>
+      <div className="sidebar--container">
+        <div className="sidebar--random">
+          <button
+            className="random--button"
+            onClick={() => props.dispatch(selectRandomColor())}
+          >
+            Random Color
+          </button>
+        </div>
+        <div className="sidebar--search">
+          <SearchBox />
+        </div>
+        <ul className="sidebar--list">
+          {props.mainColors.map(color => {
+            const active = props.selectedMainColor === color;
+            return (
+              <li key={color}>
+                <a
+                  role="button"
+                  className={`list--item ${active ? "active" : ""}`}
+                  onClick={() => props.dispatch(setMainColor(color))}
+                >
+                  {color}
                 </a>
-              )}
-            </li>
-          );
-        })}
-      </ul>
+                {active && (
+                  <a
+                    role="button"
+                    onClick={() => props.dispatch(setMainColor())}
+                  >
+                    X
+                  </a>
+                )}
+              </li>
+            );
+          })}
+        </ul>
+      </div>
       <style jsx>{`
         .sidebar {
-          grid-area: sidebar;
-          border: 1px solid #adadad;
           background: #d6d8d8;
-          box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.2);
-          padding: 20px;
-          padding-top: 40px;
+
+          position: fixed;
+          top: 100px;
+          left: 0;
+          overflow: hidden;
+          width: 0;
+          height: 100%;
+          transition: all 0.3s ease-out;
+        }
+        .sidebar--container {
+          margin: 25px;
+        }
+        .sidebar--search {
+          display: flex;
+          justify-content: center;
+        }
+        @media screen and (max-width: 768px) {
+          .sidebar * {
+            transition: all 0.3s ease-out;
+          }
+          .sidebar[aria-expanded="true"] {
+            opacity: 1;
+            width: 250px;
+            border: 1px solid #adadad;
+            box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.2);
+          }
+          .sidebar[aria-expanded="false"] * {
+            opacity: 0;
+            width: 0;
+          }
+        }
+        @media screen and (min-width: 769px) {
+          .sidebar {
+            position: relative;
+            top: 0;
+            grid-area: sidebar;
+            border: 1px solid #adadad;
+            width: 100%;
+            box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.2);
+          }
+          .sidebar--container {
+            padding: 20px;
+          }
+          .sidebar--search {
+            display: none;
+          }
         }
         .sidebar--random {
           padding: 5px;
@@ -84,6 +139,9 @@ const SideBar = props => {
         .list--item.active {
           text-decoration: underline;
           font-weight: bolder;
+        }
+        .random-button {
+          width: auto;
         }
       `}</style>
     </nav>
