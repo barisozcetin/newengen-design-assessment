@@ -4,6 +4,7 @@ export const GET_COLORS = "GET_COLORS";
 export const GET_COLOR_LIST = "GET_COLOR_LIST";
 export const GET_MAIN_COLORS = "GET_MAIN_COLORS";
 export const SET_MAIN_COLOR = "SET_MAIN_COLOR";
+export const SET_SELECTED_COLOR = "SET_SELECTED_COLOR";
 
 export const getColors = colors => {
   const colorList = [];
@@ -34,6 +35,13 @@ export const getMainColors = colors => {
 export const setMainColor = (color = "") => {
   return {
     type: SET_MAIN_COLOR,
+    color
+  };
+};
+
+export const setSelectedColor = (color = "") => {
+  return {
+    type: SET_SELECTED_COLOR,
     color
   };
 };
