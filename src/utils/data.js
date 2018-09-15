@@ -5,7 +5,6 @@ const colors = {
     "#F08080",
     "#FA8072",
     "#E9967A",
-    "#FFA07A",
     "#DC143C",
     "#FF0000",
     "#B22222",
@@ -52,7 +51,6 @@ const colors = {
   ],
   blue: [
     "#00FFFF",
-    "#00FFFF",
     "#E0FFFF",
     "#AFEEEE",
     "#7FFFD4",
@@ -83,7 +81,6 @@ const colors = {
     "#DDA0DD",
     "#EE82EE",
     "#DA70D6",
-    "#FF00FF",
     "#FF00FF",
     "#BA55D3",
     "#9370DB",
@@ -141,7 +138,7 @@ export const _getColors = mainColor => {
 
 export const _getMainColors = () => {
   const mainColors = Object.keys(colors);
-  console.log(mainColors);
+  // console.log(mainColors);
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve(mainColors);
