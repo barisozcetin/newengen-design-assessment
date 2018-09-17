@@ -46,8 +46,8 @@ const SideBar = props => {
       <style jsx>{`
         .sidebar {
           background: #d6d8d8;
-          position: fixed;
-          top: 100px;
+          position: absolute;
+          top: 80px;
           left: 0;
           overflow: hidden;
           width: 0;
@@ -69,7 +69,7 @@ const SideBar = props => {
           }
           .sidebar[aria-expanded="true"] {
             opacity: 1;
-            width: 250px;
+            width: 300px;
             border: 1px solid #adadad;
             box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.2);
           }

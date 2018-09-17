@@ -23,10 +23,10 @@ const Header = ({ toggleSidebar }) => {
             grid-area: header;
             background-color: #363c3c;
             box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.2);
-
-            padding: 30px;
+            padding: 10px;
           }
           .header--container {
+            height: 100%;
             display: flex;
             justify-content: space-between;
             align-items: center;

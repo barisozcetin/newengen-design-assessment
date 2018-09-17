@@ -16,7 +16,18 @@ class App extends Component {
   };
   componentDidMount() {
     this.props.dispatch(handleInitialData());
+    window.addEventListener("resize", this.setHeight.bind(this));
+    this.setHeight();
   }
+  // Right now mobile browsers include their app menu to viewport height property.
+  // There are discussions about it on internet. I figured it by adding a resize event listener and setting height property dynamically
+  setHeight = () => {
+    const height = window.innerHeight;
+    this.setState({ height });
+  };
+  getHeight = () => {
+    return this.state.height + "px";
+  };
   render() {
     if (this.props.loading) {
       return <Loading />;
@@ -28,12 +39,12 @@ class App extends Component {
         <Main />
         <style jsx>{`
           .app {
-            height: 100vh;
+            height: ${this.getHeight()};
             max-height: 100vh;
             overflow: hidden;
             display: grid;
             grid-template-columns: 1fr;
-            grid-template-rows: 100px minmax(80vh, 90vh);
+            grid-template-rows: auto 1fr;
             grid-template-areas:
               "header"
               "content";

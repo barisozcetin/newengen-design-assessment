@@ -27,10 +27,10 @@ class ColorGrid extends Component {
     const { visibleColors } = this.props;
     const { activePage, swatchPerPage } = this.state;
     const start = (activePage - 1) * 12;
-
     const paginatedColors = visibleColors.slice(start, start + swatchPerPage);
     const totalPages = Math.ceil(visibleColors.length / swatchPerPage);
     const paginationArr = new Array(totalPages).fill(1);
+
     return (
       <main className="container">
         <div className="swatch--grid">

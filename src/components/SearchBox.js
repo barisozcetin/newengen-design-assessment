@@ -28,10 +28,8 @@ const SearchBox = props => {
             width: 100%;
           }
           .search--input {
-            height: 40px;
             border-radius: 10px;
-            padding: 5px;
-            padding-left: 10px;
+            padding: 10px;
             font-size: 16px;
           }
           .clear {
