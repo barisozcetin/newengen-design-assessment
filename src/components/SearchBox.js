@@ -10,7 +10,7 @@ const SearchBox = props => {
     props.dispatch(setSearchText(val));
   };
   return (
-    <form className="search--form">
+    <form className="search--form" onSubmit={() => {}}>
       <input
         type="text"
         placeholder="Search"
@@ -38,6 +38,7 @@ const SearchBox = props => {
             border-radius: 10px;
             padding: 5px;
             padding-left: 10px;
+            font-size: 16px;
           }
           .clear {
             cursor: pointer;
