@@ -4,7 +4,8 @@ import {
   GET_MAIN_COLORS,
   SET_MAIN_COLOR,
   SET_SELECTED_COLOR,
-  SELECT_RANDOM_COLOR
+  SELECT_RANDOM_COLOR,
+  SET_SEARCH_TEXT
 } from "../actions/colors";
 
 import { getRandomNumber } from "../utils/helpers";
@@ -15,7 +16,8 @@ const initialState = {
   allColors: {},
   mainColors: [],
   colorList: [],
-  byMainColor: {}
+  byMainColor: {},
+  searchText: ""
 };
 
 export default (state = initialState, action) => {
@@ -32,9 +34,9 @@ export default (state = initialState, action) => {
       return { ...state, selectedColor: action.color };
     case SELECT_RANDOM_COLOR:
       const randomNumber = getRandomNumber(0, state.colorList.length - 1);
-      console.log(randomNumber);
-      console.log(state.colorList[randomNumber]);
       return { ...state, selectedColor: state.colorList[randomNumber] };
+    case SET_SEARCH_TEXT:
+      return { ...state, searchText: action.text };
     default:
       return { ...state };
   }
