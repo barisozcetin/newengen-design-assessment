@@ -30,7 +30,7 @@ class Main extends Component {
     // const totalPages = Math.ceil(visibleColors.length / swatchPerPage);
     // const paginationArr = new Array(totalPages).fill(1);
     // console.log(paginatedColors);
-    const { selectedColor, similarColors, dispatch } = this.props;
+    const { selectedColor, similarColors } = this.props;
     let content;
     if (selectedColor !== "") {
       content = (
@@ -46,35 +46,11 @@ class Main extends Component {
     return (
       <main className="content">
         {content}
-        {/* <div className="swatch--grid">
-          {paginatedColors.map(color => (
-            <div
-              key={color}
-              className="swatch--card"
-              onClick={() => this.props.dispatch(setSelectedColor(color))}
-            >
-              <div className="swatch--color" style={{ background: color }} />
-              <div className="swatch--title">
-                <p>{color}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-        <ul className="pagination">
-          {paginationArr.map((page, index) => (
-            <li
-              key={index}
-              onClick={() => this.changeActivePage(index + 1)}
-              className={`page ${activePage === index + 1 ? "active" : ""}`}
-            >
-              {index + 1}
-            </li>
-          ))}
-        </ul> */}
         <style jsx>{`
           .content {
             grid-area: content;
-            margin: 20px;
+            margin-left: 20px;
+            margin-right: 20px;
             // margin-left: 60px;
             // margin-right: 60px;
             display: flex;

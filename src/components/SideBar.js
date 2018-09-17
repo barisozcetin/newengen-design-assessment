@@ -57,9 +57,11 @@ const SideBar = props => {
         }
         .sidebar--container {
           margin: 25px;
+          display: grid;
+          grid-gap: 1vh;
         }
         .sidebar--search {
-          display: flex;
+          display: grid;
           justify-content: center;
         }
         @media screen and (max-width: 768px) {
@@ -87,28 +89,30 @@ const SideBar = props => {
             box-shadow: 2px 0px 6px 0px rgba(0, 0, 0, 0.2);
           }
           .sidebar--container {
-            padding: 20px;
+            grid-gap: 4vh;
           }
           .sidebar--search {
             display: none;
           }
+          .sidebar--random button {
+          }
+        }
+        @media screen and (min-width: 1800px) {
+          .sidebar--container {
+            padding: 40px;
+          }
         }
         .sidebar--random {
-          padding: 5px;
           display: flex;
           justify-content: center;
         }
         .sidebar--random button {
           background: white;
           border-radius: 10px;
-          width: 80%;
-          padding: 10px;
-          padding-left: 15px;
-          padding-right: 15px;
+          width: 100%;
+          padding: 15px;
           color: #363c3c;
           font-size: 16px;
-          font-style: normal;
-          font-stretch: normal;
           font-weight: 700;
           line-height: 32px;
           text-align: center;
@@ -118,6 +122,8 @@ const SideBar = props => {
         }
         .sidebar--list {
           list-style: none;
+          padding-left: 0;
+          padding-right: 15px;
         }
         .sidebar--list li {
           color: #363c3c;
@@ -141,7 +147,7 @@ const SideBar = props => {
           font-weight: bolder;
         }
         .random-button {
-          width: auto;
+          width: 100%;
         }
       `}</style>
     </nav>
