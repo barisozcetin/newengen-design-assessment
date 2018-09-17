@@ -13,7 +13,6 @@ import { getRandomNumber } from "../utils/helpers";
 const initialState = {
   selectedMainColor: "",
   selectedColor: "",
-  allColors: {},
   mainColors: [],
   colorList: [],
   byMainColor: {},
@@ -23,7 +22,7 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_COLORS:
-      return { ...state, allColors: action.colors, byMainColor: action.colors };
+      return { ...state, byMainColor: action.colors };
     case GET_COLOR_LIST:
       return { ...state, colorList: action.colorList };
     case GET_MAIN_COLORS:

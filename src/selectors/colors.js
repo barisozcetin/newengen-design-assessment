@@ -24,7 +24,6 @@ export const getSimilarColors = ({ colors }) => {
   const { colorList, selectedColor } = colors;
   const index = colorList.indexOf(selectedColor);
   if (selectedColor !== "") {
-    // console.log(selectedMainColor);
     // If selected is at the beginning of the array, previous items will be empty
     // Likewise, If selected is at the end of array, next ones will be empty
     // If they are empty, it will add a random element from the list
