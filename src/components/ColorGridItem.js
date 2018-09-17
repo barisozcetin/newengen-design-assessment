@@ -23,15 +23,18 @@ const ColorGridItem = ({ color, onColorChange, size }) => {
           grid-template-rows: ${rows};
         }
         .swatch--title {
-          // color: #363c3c;
-          padding: 0 5px 0 10px;
           text-transform: lowercase;
-          margin: 5px;
           display: flex;
         }
         p {
           align-self: center;
           font-size: ${fontSize};
+          padding-left: 1px;
+        }
+        @media screen and (min-width: 768px) {
+          .swatch--title p {
+            padding-left: 10px;
+          }
         }
       `}</style>
     </div>

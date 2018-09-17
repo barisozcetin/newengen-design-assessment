@@ -29,11 +29,16 @@ class Main extends Component {
         <style jsx>{`
           .content {
             grid-area: content;
-            margin-left: 20px;
-            margin-right: 20px;
-            margin-top: 20px;
+            margin: 20px;
             display: flex;
             flex-direction: column;
+          }
+          // old phones
+          @media screen and (max-width: 350px) {
+            .content {
+              margin: 8px;
+              width: 90%;
+            }
           }
           @media screen and (min-width: 768px) {
             .content {

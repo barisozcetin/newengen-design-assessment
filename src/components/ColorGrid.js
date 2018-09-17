@@ -74,14 +74,14 @@ class ColorGrid extends Component {
           // old phones
           @media screen and (max-width: 350px) {
             .swatch--grid {
-              grid-template-columns: repeat(3, minmax(50px, 85px));
+              grid-template-columns: repeat(3, minmax(40px, 80px));
               grid-template-rows: repeat(4, minmax(40px, 80px));
-              grid-gap: 15px;
+              grid-gap: 10px;
             }
           }
           @media screen and (min-width: 769px) {
             .swatch--grid {
-              grid-template-columns: repeat(4, minmax(100px, 200px));
+              grid-template-columns: repeat(4, minmax(100px, 300px));
               grid-template-rows: repeat(3, minmax(100px, 200px));
               row-gap: 3rem;
               column-gap: 2rem;
@@ -93,9 +93,6 @@ class ColorGrid extends Component {
               row-gap: 40px;
             }
             .container {
-            }
-            .content {
-              grid-area: content;
             }
           }
           .swatch--color {

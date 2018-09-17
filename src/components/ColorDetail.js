@@ -27,23 +27,17 @@ const ColorDetail = ({ color, similarColors, onColorChange }) => {
             display: grid;
             height: 100%;
             grid-template-rows: 50vh 15vh 30px;
-            grid-template-columns: 90vw;
+            // grid-template-columns: 90vw;
+            // grid-template-columns: 80%;
+            width: 100%;
+            align-self: center;
             grid-gap: 10px;
-          }
-          @media screen and (min-width: 769px) {
-            .container {
-              grid-template-columns: minmax(40vw, 50vw);
-            }
-          }
-          @media screen and (min-width: 1800px) {
-            .container {
-            }
           }
           .similar-list {
             height: 100%;
             display: grid;
-            grid-template-columns: repeat(5, 1fr);
-            grid-gap: 10px;
+            grid-template-columns: repeat(5, minmax(30px, 1fr));
+            grid-gap: 8px;
           }
           .clear {
             justify-self: center;
@@ -53,6 +47,22 @@ const ColorDetail = ({ color, similarColors, onColorChange }) => {
             border-radius: 5px;
             padding-right: 20px;
             padding-left: 20px;
+          }
+          @media screen and (min-width: 769px) {
+            .container {
+              width: 100%;
+            }
+            .similar-list {
+              grid-gap: 20px;
+            }
+          }
+          @media screen and (min-width: 1800px) {
+            .container {
+              width: 100%;
+            }
+            .similar-list {
+              grid-gap: 60px;
+            }
           }
         `}
       </style>
