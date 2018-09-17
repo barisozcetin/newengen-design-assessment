@@ -31,7 +31,6 @@ class ColorGrid extends Component {
     const paginatedColors = visibleColors.slice(start, start + swatchPerPage);
     const totalPages = Math.ceil(visibleColors.length / swatchPerPage);
     const paginationArr = new Array(totalPages).fill(1);
-    // console.log(paginatedColors);
     return (
       <main className="container">
         <div className="swatch--grid">
@@ -41,16 +40,6 @@ class ColorGrid extends Component {
               color={color}
               onColorChange={this.handleColorChange}
             />
-            // <div
-            //   key={color}
-            //   className="swatch--card"
-            //   onClick={() => this.props.dispatch(setSelectedColor(color))}
-            // >
-            //   <div className="swatch--color" style={{ background: color }} />
-            //   <div className="swatch--title">
-            //     <p>{color}</p>
-            //   </div>
-            // </div>
           ))}
         </div>
         <ul className="pagination">
@@ -94,21 +83,26 @@ class ColorGrid extends Component {
           }
           @media screen and (min-width: 769px) {
             .container {
-              margin: 40px;
+              margin: 25px;
             }
             .swatch--grid {
-              grid-template-columns: repeat(4, minmax(100px, 350px));
+              grid-template-columns: repeat(4, minmax(100px, 200px));
               grid-template-rows: repeat(3, minmax(100px, 200px));
               row-gap: 3rem;
               column-gap: 2rem;
             }
           }
-          @media screen and (min-width: 1600px) {
+          @media screen and (min-width: 1800px) {
             .swatch--grid {
               padding-left: 1rem;
               padding-right: 1rem;
-              column-gap: 40px;
-              row-gap: 30px;
+              column-gap: 50px;
+              row-gap: 40px;
+            }
+            .container {
+              padding-top: 40px;
+              padding-left: 200px;
+              padding-right: 200px;
             }
             .content {
               grid-area: content;
@@ -123,7 +117,7 @@ class ColorGrid extends Component {
             border-radius: 10px;
           }
           .swatch--title {
-            color: #363c3c;
+            // color: #363c3c;
             padding: 0 5px 0 20px;
             text-transform: lowercase;
           }
@@ -149,8 +143,6 @@ class ColorGrid extends Component {
 
 const mapStateToProps = state => {
   const visibleColors = getVisibleColors(state);
-  // const { allColors, selectedColor, selectedMainColor } = colors;
-  // console.log(...Object.values(allColors));
   return {
     visibleColors,
     selectedMainColor: state.colors.selectedMainColor,

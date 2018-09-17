@@ -1,8 +1,11 @@
 body,
-input {
+input,
+button {
   font-family: "Source Serif Pro", serif;
+  color: #363c3c;
 }
-body {
+body,
+p {
   margin: 0;
   padding: 0;
 }
@@ -11,3 +14,15 @@ a,
 button {
   cursor: pointer;
 }
+
+/* .continer {
+  padding-top: 50px;
+}
+
+@media screen and (min-width: 1500px) {
+  .container {
+    padding-top: 0px;
+    padding-left: 150px;
+    padding-right: 150px;
+  }
+} */

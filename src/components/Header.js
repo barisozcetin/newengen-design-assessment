@@ -51,13 +51,18 @@ const Header = ({ toggleSidebar }) => {
             }
             .header--container {
               margin-left: 2rem;
-              margin-right: 2rem;
+              margin-right: 2vw;
             }
           }
-          @media screen and (min-width: 1500px) {
+          @media screen and (min-width: 1280px) {
+            .header--container {
+              margin-right: 8vw;
+            }
+          }
+          @media screen and (min-width: 1800px) {
             .header--container {
               margin-left: 3rem;
-              margin-right: 12rem;
+              margin-right: 12vw;
             }
           }
         `}

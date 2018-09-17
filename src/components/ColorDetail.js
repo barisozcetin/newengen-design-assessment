@@ -34,16 +34,18 @@ const ColorDetail = ({ color, similarColors, onColorChange }) => {
           }
           @media screen and (min-width: 769px) {
             .container {
-              margin: 40px;
-              pading-right: 1.2rem;
-              pading-left: 1.2rem;
+              margin: 25px;
+              padding-right: 12vw;
+              padding-left: 12vw;
             }
           }
-          @media screen and (min-width: 1500px) {
+          @media screen and (min-width: 1800px) {
             .container {
-              padding-top: 50px;
-              padding-left: 150px;
-              padding-right: 150px;
+              padding-top: 40px;
+              padding-left: 250px;
+              padding-right: 250px;
+              margin-left: 1.4rem;
+              margin-right: 1.4rem;
             }
           }
           .similar-list {
@@ -56,7 +58,7 @@ const ColorDetail = ({ color, similarColors, onColorChange }) => {
           .clear {
             justify-self: center;
             background: transparent;
-            color: #363c3c;
+            font-size: 16px;
             border: 1px solid #363c3c;
             border-radius: 5px;
             padding-right: 20px;
