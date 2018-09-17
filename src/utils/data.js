@@ -135,13 +135,3 @@ export const _getColors = mainColor => {
     }, 1000);
   });
 };
-
-export const _getMainColors = () => {
-  const mainColors = Object.keys(colors);
-  // console.log(mainColors);
-  return new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(mainColors);
-    }, 1000);
-  });
-};

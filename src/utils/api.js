@@ -1,9 +1,7 @@
-import { _getMainColors, _getColors } from "./data";
+import { _getColors } from "./data";
 
 export function getInitialData() {
-  return Promise.all([_getColors(), _getMainColors()]).then(
-    ([colors, mainColors]) => {
-      return { colors, mainColors };
-    }
-  );
+  return Promise.all([_getColors()]).then(([colors]) => {
+    return { colors };
+  });
 }
