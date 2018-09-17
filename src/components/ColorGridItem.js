@@ -14,7 +14,9 @@ const ColorGridItem = ({ color, onColorChange, size }) => {
           border-radius: 10px 10px 0 0;
         }
         .swatch--card {
-          border: 1px solid black;
+          border: 1px solid #fdfdfd;
+          background: #fdfdfd;
+          box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.25);
           border-radius: 10px;
           cursor: pointer;
           display: grid;

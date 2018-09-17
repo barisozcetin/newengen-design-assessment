@@ -10,7 +10,10 @@ class ColorGrid extends Component {
     swatchPerPage: 12
   };
   componentDidUpdate(prevProps) {
-    if (prevProps.selectedMainColor !== this.props.selectedMainColor) {
+    if (
+      prevProps.selectedMainColor !== this.props.selectedMainColor ||
+      prevProps.searchText !== this.props.searchText
+    ) {
       this.setState({ activePage: 1 });
     }
   }
@@ -63,51 +66,52 @@ class ColorGrid extends Component {
         </ul>
         <style jsx>{`
           .container {
-            // grid-area: content;
-            margin: 20px;
-            // margin-left: 60px;
-            // margin-right: 60px;
+            margin-top: 10px;
+            height: 100%;
             display: grid;
-            grid-template-rows: 1fr auto;
+            grid-template-rows: 70vh auto;
+            grid-gap: 0.6rem;
+            margin-bottom: 15px;
           }
           .pagination {
             justify-self: center;
           }
           .swatch--grid {
             display: grid;
-            // padding: 10px;
-            // padding-left: 1rem;
-            // padding-right: 1rem;
-            column-gap: 1.2rem;
-            row-gap: 1.2rem;
+            justify-content: center;
+            grid-gap: 0.8rem;
             height: 100%;
-            grid-template-columns: repeat(3, minmax(60px, 220px));
-            grid-template-rows: repeat(4, minmax(100px, 150px));
+            grid-template-columns: repeat(3, minmax(0px, 220px));
+            grid-template-rows: repeat(4, minmax(60px, 1fr));
+          }
+          // old phones
+          @media screen and (max-width: 350px) {
+            .swatch--grid {
+              grid-template-columns: repeat(3, minmax(50px, 85px));
+              grid-template-rows: repeat(4, minmax(40px, 80px));
+              grid-gap: 15px;
+            }
           }
           @media screen and (min-width: 769px) {
+            .container {
+              margin: 40px;
+            }
             .swatch--grid {
-              grid-template-columns: repeat(4, minmax(100px, 250px));
+              grid-template-columns: repeat(4, minmax(100px, 350px));
               grid-template-rows: repeat(3, minmax(100px, 200px));
-              padding: 20px;
+              row-gap: 3rem;
+              column-gap: 2rem;
+            }
+          }
+          @media screen and (min-width: 1600px) {
+            .swatch--grid {
               padding-left: 1rem;
               padding-right: 1rem;
               column-gap: 40px;
               row-gap: 30px;
             }
-          }
-          @media screen and (min-width: 1600px) {
-            .swatch--grid {
-              padding: 20px;
-              padding-left: 1rem;
-              padding-right: 1rem;
-              column-gap: 80px;
-              row-gap: 60px;
-            }
             .content {
               grid-area: content;
-              margin: 10px;
-              margin-left: 60px;
-              margin-right: 60px;
             }
           }
           .swatch--color {
@@ -147,7 +151,11 @@ const mapStateToProps = state => {
   const visibleColors = getVisibleColors(state);
   // const { allColors, selectedColor, selectedMainColor } = colors;
   // console.log(...Object.values(allColors));
-  return { visibleColors, selectedMainColor: state.colors.selectedMainColor };
+  return {
+    visibleColors,
+    selectedMainColor: state.colors.selectedMainColor,
+    searchText: state.colors.searchText
+  };
 };
 
 export default connect(mapStateToProps)(ColorGrid);
