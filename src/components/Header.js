@@ -62,7 +62,6 @@ const Header = ({ toggleSidebar }) => {
           @media screen and (min-width: 1800px) {
             .header--container {
               margin-left: 3rem;
-              margin-right: 12vw;
             }
           }
         `}
