@@ -11,6 +11,7 @@ const SearchBox = props => {
         className="search--input"
         value={props.searchText}
         onChange={e => props.dispatch(setSearchText(e.target.value))}
+        aria-label="search"
       />
       <i
         role="button"
