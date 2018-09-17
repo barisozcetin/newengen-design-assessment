@@ -3,12 +3,6 @@ import { connect } from "react-redux";
 import { setSearchText } from "./../actions/colors";
 
 const SearchBox = props => {
-  const handleChange = e => {
-    // console.log(e.target.value);
-    const val = e.target.value;
-    console.log(val);
-    props.dispatch(setSearchText(val));
-  };
   return (
     <form className="search--form" onSubmit={() => {}}>
       <input
@@ -16,7 +10,6 @@ const SearchBox = props => {
         placeholder="Search"
         className="search--input"
         value={props.searchText}
-        // onChange={handleChange}
         onChange={e => props.dispatch(setSearchText(e.target.value))}
       />
       <i
@@ -24,6 +17,7 @@ const SearchBox = props => {
         className="clear"
         hidden={props.searchText === ""}
         onClick={() => props.dispatch(setSearchText())}
+        aria-label="Clear selection"
       >
         🗙
       </i>

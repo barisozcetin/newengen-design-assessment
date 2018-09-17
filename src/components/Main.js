@@ -6,30 +6,10 @@ import ColorGrid from "./ColorGrid";
 import ColorDetail from "./ColorDetail";
 
 class Main extends Component {
-  // state = {
-  //   activePage: 1,
-  //   swatchPerPage: 12
-  // };
-  // componentDidUpdate(prevProps) {
-  //   if (prevProps.selectedMainColor !== this.props.selectedMainColor) {
-  //     this.setState({ activePage: 1 });
-  //   }
-  // }
-  // changeActivePage = page => {
-  //   this.setState({ activePage: page });
-  // };
   handleColorChange = (color = "") => {
     this.props.dispatch(setSelectedColor(color));
   };
   render() {
-    // const { visibleColors } = this.props;
-    // const { activePage, swatchPerPage } = this.state;
-    // const start = (activePage - 1) * 12;
-
-    // const paginatedColors = visibleColors.slice(start, start + swatchPerPage);
-    // const totalPages = Math.ceil(visibleColors.length / swatchPerPage);
-    // const paginationArr = new Array(totalPages).fill(1);
-    // console.log(paginatedColors);
     const { selectedColor, similarColors } = this.props;
     let content;
     if (selectedColor !== "") {
@@ -51,10 +31,27 @@ class Main extends Component {
             grid-area: content;
             margin-left: 20px;
             margin-right: 20px;
-            // margin-left: 60px;
-            // margin-right: 60px;
+            margin-top: 20px;
             display: flex;
             flex-direction: column;
+          }
+          @media screen and (min-width: 768px) {
+            .content {
+              margin-top: 50px;
+              margin-left: 10vw;
+              margin-right: 10vw;
+            }
+          }
+          @media screen and (min-width: 1024px) {
+            .content {
+              margin-top: 60px;
+            }
+          }
+          @media screen and (min-width: 1800) {
+            .content {
+              margin-left: 20vw;
+              margin-right: 20vw;
+            }
           }
         `}</style>
       </main>

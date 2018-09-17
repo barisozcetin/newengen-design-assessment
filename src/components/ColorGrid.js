@@ -55,12 +55,10 @@ class ColorGrid extends Component {
         </ul>
         <style jsx>{`
           .container {
-            margin-top: 10px;
             height: 100%;
             display: grid;
             grid-template-rows: 70vh auto;
             grid-gap: 0.6rem;
-            margin-bottom: 15px;
           }
           .pagination {
             justify-self: center;
@@ -82,9 +80,6 @@ class ColorGrid extends Component {
             }
           }
           @media screen and (min-width: 769px) {
-            .container {
-              margin: 25px;
-            }
             .swatch--grid {
               grid-template-columns: repeat(4, minmax(100px, 200px));
               grid-template-rows: repeat(3, minmax(100px, 200px));
@@ -94,15 +89,10 @@ class ColorGrid extends Component {
           }
           @media screen and (min-width: 1800px) {
             .swatch--grid {
-              padding-left: 1rem;
-              padding-right: 1rem;
               column-gap: 50px;
               row-gap: 40px;
             }
             .container {
-              padding-top: 40px;
-              padding-left: 200px;
-              padding-right: 200px;
             }
             .content {
               grid-area: content;
@@ -117,7 +107,6 @@ class ColorGrid extends Component {
             border-radius: 10px;
           }
           .swatch--title {
-            // color: #363c3c;
             padding: 0 5px 0 20px;
             text-transform: lowercase;
           }

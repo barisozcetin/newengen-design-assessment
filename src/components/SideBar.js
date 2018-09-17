@@ -46,7 +46,6 @@ const SideBar = props => {
       <style jsx>{`
         .sidebar {
           background: #d6d8d8;
-
           position: fixed;
           top: 100px;
           left: 0;
@@ -90,6 +89,7 @@ const SideBar = props => {
           }
           .sidebar--container {
             grid-gap: 4vh;
+            padding-top: 25px;
           }
           .sidebar--search {
             display: none;
@@ -107,17 +107,16 @@ const SideBar = props => {
           justify-content: center;
         }
         .sidebar--random button {
-          background: white;
+          border: 1px solid #363c3c;
+          background: #ffffff;
           border-radius: 10px;
           width: 100%;
-          padding: 15px;
-          color: #363c3c;
+          padding: 8px;
+          // color: #363c3c;
           font-size: 16px;
           font-weight: 700;
           line-height: 32px;
           text-align: center;
-          text-transform: none;
-          text-decoration: none;
           letter-spacing: 0px;
         }
         .sidebar--list {
@@ -126,7 +125,7 @@ const SideBar = props => {
           padding-right: 15px;
         }
         .sidebar--list li {
-          color: #363c3c;
+          // color: #363c3c;
           font-size: 20px;
           font-style: normal;
           font-stretch: normal;
@@ -145,9 +144,6 @@ const SideBar = props => {
         .list--item.active {
           text-decoration: underline;
           font-weight: bolder;
-        }
-        .random-button {
-          width: 100%;
         }
       `}</style>
     </nav>
