@@ -7,8 +7,6 @@ export const SET_SEARCH_TEXT = "SET_SEARCH_TEXT";
 export const SELECT_RANDOM_COLOR = "SELECT_RANDOM_COLOR";
 
 export const getColors = colors => {
-  // const colorList = [];
-  // Object.values(colors);
   return {
     type: GET_COLORS,
     colors
